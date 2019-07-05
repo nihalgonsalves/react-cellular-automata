@@ -4,7 +4,7 @@
   "description": "react and javascript implementation of elementary cellular automata",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.3"
+    "react-scripts": "3.0.1"
   },
   "dependencies": {
     "bulma": "^0.2.3",
