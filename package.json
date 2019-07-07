@@ -4,7 +4,7 @@
   "description": "react and javascript implementation of elementary cellular automata",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.3"
+    "react-scripts": "3.0.1"
   },
   "dependencies": {
     "bulma": "^0.2.3",
@@ -26,5 +26,17 @@
   "bugs": {
     "url": "https://github.com/nihalgonsalves/react-cellular-automata/issues"
   },
-  "homepage": "http://dev.nihalgonsalv.es/react-cellular-automata/"
+  "homepage": "http://dev.nihalgonsalv.es/react-cellular-automata/",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
