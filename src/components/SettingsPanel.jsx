@@ -10,7 +10,7 @@ import Button from './Button';
 const presetRules = [30, 60, 90, 50, 22, 190, 5, 37];
 
 const GenerationControl = ({ onChange, value }) =>
-  <p className="control has-icon is-expanded">
+  <p className="control has-icons-left is-expanded">
     <input
       className="input"
       type="number"
@@ -21,12 +21,14 @@ const GenerationControl = ({ onChange, value }) =>
       value={value}
       placeholder="number of generations"
     />
-    <i className="fa fa-bars" />
+    <span className="icon is-small is-left">
+      <i className="fa fa-bars" />
+    </span>
   </p>
 ;
 
 const RuleControl = ({ onChange, value }) =>
-  <p className="control has-icon is-expanded">
+  <p className="control has-icons-left is-expanded">
     <input
       className="input"
       type="number"
@@ -37,7 +39,9 @@ const RuleControl = ({ onChange, value }) =>
       onChange={onChange}
       value={value}
     />
-    <i className="fa fa-cog" />
+    <span className="icon is-small is-left">
+      <i className="fa fa-cog" />
+    </span>
   </p>
 ;
 
@@ -53,22 +57,28 @@ const PresetRuleControl = ({ onChange, value }) =>
 ;
 
 const RandomControl = ({ onToggleRandom, random, seed }) =>
-  <p className="control has-addons">
-    <button className={`button ${!random && !seed && 'is-primary'}`} onClick={onToggleRandom}>
-      <span className="icon"><i className="fa fa-circle" /></span>
-      <span>Regular</span>
-    </button>
-    <button className={`button ${random && !seed && 'is-primary'}`}  onClick={onToggleRandom}>
-      <span className="icon"><i className="fa fa-random" /></span>
-      <span>Random</span>
-    </button>
-  </p>
+  <div className="field has-addons">
+    <div className="control">
+      <button className={`button ${!random && !seed && 'is-primary'}`} onClick={onToggleRandom}>
+        <span className="icon"><i className="fa fa-circle" /></span>
+        <span>Regular</span>
+      </button>
+    </div>
+    <div className="control">
+      <button className={`button ${random && !seed && 'is-primary'}`}  onClick={onToggleRandom}>
+        <span className="icon"><i className="fa fa-random" /></span>
+        <span>Random</span>
+      </button>
+    </div>
+  </div>
 ;
 
 const SeedControl = ({ onChange, value }) =>
-  <p className="control has-icon is-expanded">
+  <p className="control has-icons-left is-expanded">
     <input onChange={onChange} value={value} placeholder="seed" className="input is-expanded" />
-    <i className="fa fa-snowflake-o" />
+    <span className="icon is-small is-left">
+      <i className="fa fa-snowflake-o" />
+    </span>
   </p>
 ;
 
@@ -77,7 +87,7 @@ const BinaryRuleDisplay = ({ binaryRule }) =>
     <div className="column" />
     {binaryRules.map((rule, i) =>
       <div key={rule} className="column is-1 has-text-centered">
-        <span className="tag is-large is-dark">{rule}</span><br /><br />
+        <span className="tag is-rounded is-large is-dark">{rule}</span><br /><br />
         <input className="input has-text-centered" disabled value={parseInt(binaryRule && binaryRule[i], 2) || 0}/>
       </div>
     )}
@@ -103,12 +113,12 @@ const SettingsPanel = ({
     <label>Generations</label>
     <GenerationControl onChange={onChangeGenerations} value={generations} />
     <label>Rule<sub>10</sub></label>
-    <span className="control is-grouped">
+    <span className="field is-grouped">
       <RuleControl onChange={onChangeDecimalRule} value={decimalRule} />
       <PresetRuleControl onChange={onChangeDecimalRule} value={decimalRule} />
     </span>
     <label>Initial state (options override seed)</label>
-    <span className="control is-grouped">
+    <span className="field is-grouped">
       <SeedControl onChange={onChangeSeed} value={seed} />
       <RandomControl onToggleRandom={onToggleRandom} random={random} seed={seed} />
     </span>
