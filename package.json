@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/nihalgonsalves/react-cellular-automata/issues"
   },
-  "homepage": "http://dev.nihalgonsalv.es/react-cellular-automata/",
+  "homepage": "http://localhost:5000/",
   "browserslist": {
     "production": [
       ">0.2%",
