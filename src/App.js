@@ -109,7 +109,7 @@ class App extends React.Component {
     this.setState({
       automata,
       cellWidth,
-      cellOn: `<img style="width:${cellWidth}%" src="./black.png" />`,
+      cellOn: `<img style="width:${cellWidth}%" src="${process.env.PUBLIC_URL}/black.png" />`,
       cellOff: `<img style="width:${cellWidth}%; visibility:hidden" />`,
     });
   }
